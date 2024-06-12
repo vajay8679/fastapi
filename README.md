@@ -875,3 +875,64 @@ pip install -r requirements.txt
 # GIT
 
 git init
+git add --all
+git commit -m "initial commit"
+
+git config --global user.email "vajay8679@gmail.com"
+git config --global user.name "vajay8679"
+git branch -M main
+git remote add origin https://github.com/vajay8679/fastapi.git
+git push -u origin main
+
+
+# deploy your application to heroku
+https://www.heroku.com/home
+
+
+
+install herooku in ubuntu
+
+# https://devcenter.heroku.com/articles/heroku-cli
+
+curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
+
+heroku --version
+
+heroku login
+
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku --version
+heroku/8.11.5 linux-x64 node-v16.20.2
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku login
+
+
+https://devcenter.heroku.com/articles/getting-started-with-python#set-up
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku create --help
+
+# create app in heroku
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku create fastapi-ajay
+
+https://git.heroku.com/fastapi-ajay.git
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku create fastapi-ajay
+Creating ⬢ fastapi-ajay... done
+https://fastapi-ajay-2fdc18c4b45a.herokuapp.com/ | https://git.heroku.com/fastapi-ajay.git
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ git push heroku main
+
+
+heroku --version
+heroku login
+heroku create --help
+heroku create fastapi-ajay
+git remote 
+git push heroku main
+
+url after running above command - https://fastapi-ajay-2fdc18c4b45a.herokuapp.com
+
+
+
+git remote
+heroku
+origin
+
