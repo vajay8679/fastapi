@@ -936,3 +936,110 @@ git remote
 heroku
 origin
 
+
+
+().venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ git add .
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ git commit -m "main"
+[main 0886b65] main
+ 3 files changed, 64 insertions(+), 2 deletions(-)
+ create mode 100644 Procfile
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$  git push origin main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.02 KiB | 348.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/vajay8679/fastapi.git
+   aaf9dee..0886b65  main -> main
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ git push heroku main
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku logs --help
+
+
+git add .
+git commit -m "main"
+git push origin main
+git push heroku main
+heroku logs --help
+
+heroku ps:restart
+heroku apps:info fastapi-ajay
+heroku ps --help
+heroku logs -t
+
+# for tables
+heroku run "alembic upgrade head"
+
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku logs -t
+
+
+
+# heroku postgres
+https://devcenter.heroku.com/articles/heroku-postgresql
+
+heroku addons:create heroku-postgresql:hobby-dev --help
+heroku addons:create heroku-postgresql:standard-0 -a fastapi-ajay
+heroku addons:plans
+
+go inside to see -> Heroku Postgres  Standard 0
+https://dashboard.heroku.com/apps/fastapi-ajay
+
+
+heroku postgres - https://addons-sso.heroku.com/auth/secure-login
+
+
+User - u743sn6qtgktpe
+Password - pcb2f891da38470c77a61a0f6258ee074e99227b9bde3a4b6212bf874b047e281
+Host - ec2-54-173-195-20.compute-1.amazonaws.com
+Database - d1mt0tih2n9qkv
+Port - 5432
+URI - postgres://u743sn6qtgktpe:pcb2f891da38470c77a61a0f6258ee074e99227b9bde3a4b6212bf874b047e281@ec2-54-173-195-20.compute-1.amazonaws.com:5432/d1mt0tih2n9qkv
+Heroku CLI - heroku pg:psql postgresql-spherical-54818 --app fastapi-ajay
+
+
+
+![alt text](image-3.png)
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku apps --help
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku ps --help
+
+
+restart instance
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku ps:restart
+
+
+heroku apps:info fastapi-ajay
+
+
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku apps:info fastapi-ajay
+=== fastapi-ajay
+Addons:         heroku-postgresql:standard-0
+                heroku-postgresql:standard-0
+Auto Cert Mgmt: false
+Dynos:          web: 1
+Git URL:        https://git.heroku.com/fastapi-ajay.git
+Owner:          vajay8679@gmail.com
+Region:         us
+Repo Size:      492 KB
+Slug Size:      53 MB
+Stack:          heroku-22
+Web URL:        https://fastapi-ajay-2fdc18c4b45a.herokuapp.com/
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ 
+
+
+# check logs
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku logs -t
+
+
+
+
+# Getting Started on Heroku with Python
+https://devcenter.heroku.com/articles/getting-started-with-python#start-a-console
+
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku run "alembic upgrade head"
