@@ -1,3 +1,5 @@
+# GIT - https://github.com/Sanjeev-Thiyagarajan/fastapi-course/blob/main/tests/test_users.py
+
 # 1. Python FastAPI Course Intro: Part #1 Python API Course
 https://www.youtube.com/watch?v=Yw4LmMQXXFs&list=PL8VzFQ8k4U1L5QpSapVEzoSfob-4CR8zM&index=2&ab_channel=SanjeevThiyagarajan
 
@@ -885,6 +887,8 @@ git remote add origin https://github.com/vajay8679/fastapi.git
 git push -u origin main
 
 
+#########################################################################################
+
 # deploy your application to heroku
 https://www.heroku.com/home
 
@@ -1036,10 +1040,563 @@ Web URL:        https://fastapi-ajay-2fdc18c4b45a.herokuapp.com/
 (.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku logs -t
 
 
+heroku url - https://fastapi-ajay-2fdc18c4b45a.herokuapp.com/
 
+
+heroku billing- https://dashboard.heroku.com/account/billing
 
 # Getting Started on Heroku with Python
 https://devcenter.heroku.com/articles/getting-started-with-python#start-a-console
 
 
 (.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ heroku run "alembic upgrade head"
+
+
+
+
+# Deploy on Digital ocean
+
+terminal - ssh root@134.122.25.116
+
+yes
+password
+
+sudo apt update && sudo apt upgrade -y
+
+python3 --version
+
+pip3 --version
+
+sudo apt install python3-pip
+
+sudo pip3 install virtualenv
+
+sudo apt install postgresql postgresql-contrib -y
+
+psql --version
+
+psql --help
+
+psql -U postgres
+
+whoami
+
+sudo cat /etc/passwd
+
+su - postgres
+
+psql -U postgres
+
+\password postgres
+
+\q
+
+exit
+
+cd /etc/postgressql/12/main
+
+ls
+
+sudo vi postgresql.conf
+
+
+#####################################
+Connection and Authentication
+#####################################
+
+listen_addresses = "*"
+
+
+
+sudo vi pg_hba.conf
+
+localhost  all  postgres md5
+
+localhost all all md5
+
+localhost all all 0.0.0.0/0 md5
+
+localhost all all ::/0 md5
+
+
+systemctl restart postgresql
+
+psql -U postgres
+
+\q
+
+
+now go to postgresql
+
+
+hostname - 134.122.25.116
+port - 5432
+database - postgres
+username -postgres
+password - postgres
+
+inside
+
+root@ubuntu-fastapi:etc/postgresql/12/main# adduser ajay
+
+password -admin
+
+root@ubuntu-fastapi:etc/postgresql/12/main# su - ajay
+
+exit
+
+exit
+
+ssh ajay@134.122.25.116
+
+admin
+
+sudo apt upgrade
+
+exit
+
+ssh root@134.122.25.116
+
+usermod -aG sudo ajay
+
+exit
+
+exit
+
+ssh ajay@134.122.25.116
+
+sudo apt upgrade
+
+pwd
+
+/home/ajay
+
+cd ~
+
+cd /home/sanjeev
+
+mkdir app
+
+cd app
+
+virtualenv venv
+
+ls -la
+
+source venv/bin/activate
+
+deactivate
+
+mkdir src
+
+cd src/
+
+ajay@ubuntu-fastapi:~/app/src$ git clone https://github.com/vajay8679/fastapi.git .
+
+ls
+
+cd ..
+
+source venv/bin/activate
+
+cd src/
+
+ls
+
+cat requirements.txt 
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ pip install -r requirements.txt 
+
+deactivate
+
+sudo apt install libpq-dev
+
+
+source venv/bin/activate
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ pip install -r requirements.txt 
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ uvicorn app.main:app 
+
+error of env variables
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ export MY_NAME=ajay
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ printenv
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ unset MY_NAME
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ printenv
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ cd ~
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ touch .env
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ ls
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ ls -la
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ vi .env
+
+export MY_NAME=ajay
+export MY_PASSWORD=admin
+
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ source .env
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ cat .env
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ unset MY_NAME
+(venv) ajay@ubuntu-fastapi:~/app/src$ unset MY_PASSWORD
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ source .env
+
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ vi .env
+
+DATABASE_HOSTNAME=localhost
+DATABASE_PORT=5432
+DATABASE_PASSWORD=root
+DATABASE_NAME=fastapi
+DATABASE_USERNAME=root
+SECRET_KEY=30719e0833211d59adf8ae084cf3d1fb8f3b39a8e0eccb62045c709f426adf28
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ cat .env
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ set -o allexport; source /home/ajay/.env; set +o allexport
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ printenv
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ sudo eboot
+
+
+ssh ajay@134.122.25.116
+
+prinenv
+
+ls
+
+cd ~
+
+ls -la
+
+
+vi .profile  # paste below line in bottom
+
+set -o allexport; source /home/ajay/.env; set +o allexport
+
+printenv
+
+exit
+
+ssh ajay@134.122.25.116
+
+printenv
+
+reboot
+
+ssh ajay@134.122.25.116
+
+printenv
+
+
+ls -la
+
+vi .env
+
+cd app/
+
+source venv/bin/activate
+
+cd src/
+
+ls
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ alembic upgrade head
+
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ uvicorn app.main:app
+
+134.122.25.116:8000
+
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ uvicorn --host 0.0.0.0 app.main:app --help
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ uvicorn --host 0.0.0.0 app.main:app 
+
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ pip install gunicorn
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ pip isntall httptool
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ pip install  uvtools
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ pip install  uvloop
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ gunicorn --help
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ pip freeze
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ ps -aef | grep -i gunicorn
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ systemctl restart
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ /etc/systemmd/system/
+
+
+in fastapi-1 
+
+file - gunicorn.service
+
+write code in above file
+
+![alt text](image-4.png)
+
+
+(venv) ajay@ubuntu-fastapi:~/app/src$ /etc/systemmd/system/
+
+(venv) ajay@ubuntu-fastapi:/etc/systemmd/system$ sudo vi api.service
+
+![alt text](image-6.png)
+
+(venv) ajay@ubuntu-fastapi:/etc/systemmd/system$ systemctl start api
+
+(venv) ajay@ubuntu-fastapi:/etc/systemmd/system$ systemctl status api
+
+(venv) ajay@ubuntu-fastapi:/etc/systemmd/system$ cd ~
+
+ls
+
+ls -la
+
+(venv) ajay@ubuntu-fastapi:/etc/systemmd/system$ systemctl restart api.service
+
+(venv) ajay@ubuntu-fastapi:/etc/systemmd/system$ systemctl daemon-reload
+
+(venv) ajay@ubuntu-fastapi:/etc/systemmd/system$ systemctl status api
+
+(venv) ajay@ubuntu-fastapi:/etc/systemmd/system$ systemctl restart api
+
+
+ajay@ubuntu-fastapi:~$ systemctl status api
+
+if disable
+
+ajay@ubuntu-fastapi:~$ sudo systemctl enable api
+
+ajay@ubuntu-fastapi:~$ systemctl status api
+now enable
+
+
+# NGINX
+
+
+![alt text](image-7.png)
+
+
+sudo apt install nginx -y
+
+systemctl start nginx
+
+cd /etc/nginx/sites-available 
+
+ls
+
+cat default
+
+
+nginx
+
+![alt text](image-8.png)
+
+
+sudo vi default
+
+location / {
+ delete 3 lines and paste 
+
+                proxy_pass http://localhost:8000;
+                proxy_http_version 1.1;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection 'upgrade';
+                proxy_set_header Host $http_host;
+                proxy_set_header X-NginX-Proxy true;
+                proxy_redirect off;
+}
+
+
+systemctl restart nginx
+
+
+
+
+
+ common domain registers
+
+
+for SSL - https://certbot.eff.org/
+
+https://certbot.eff.org/instructions?ws=nginx&os=ubuntufocal
+
+snap --version
+
+sudo snap install --classic certbot
+
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+
+sudo certbot --nginx
+
+sudo certbot certonly --nginx
+
+
+
+systemctl status nginx
+systemctl enable nginx
+
+
+
+cd /etc/nginx/sites-available
+
+/etc/nginx/sites-available~:$ sudo ufw status
+/etc/nginx/sites-available~:$sudo ufw allow http
+/etc/nginx/sites-available~:$sudo ufw allow https
+/etc/nginx/sites-available~:$sudo ufw allow ssh
+/etc/nginx/sites-available~:$sudo ufw allow 5432
+
+/etc/nginx/sites-available~:$sudo ufw enable
+/etc/nginx/sites-available~:$sudo ufw status
+
+/etc/nginx/sites-available~:$sudo ufw delete allow 5432
+
+
+on live take pull
+
+cd app/src/
+git pull
+sudo systemctl restart api
+
+
+
+
+# setup docker
+
+https://docs.docker.com/desktop/install/ubuntu/
+
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+echo  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu 
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |
+
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo service docker start
+sudo docker run hello-world
+
+
+# install docker desktop
+
+zec@zec-HP-EliteBook-840-G3:~/Downloads$ sudo apt-get install ./docker-desktop-4.30.0-amd64.deb
+systemctl --user start docker-desktop
+
+
+docker compose version
+docker --version
+docker version
+
+# start and stop docker desktop
+systemctl --user enable docker-desktop
+systemctl --user stop docker-desktop
+
+
+upgrade - sudo apt-get install ./docker-desktop-<version>-<arch>.deb
+
+
+# install python image
+
+https://hub.docker.com/_/python
+docker pull python
+
+
+docker build --help
+
+# build image - 
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ docker build -t fastapi-1 .
+ 
+docker build -t fastapi-1 .
+docker image ls
+
+# container isntall
+docker-compose up -d
+docker ps -a
+
+
+docker logs
+
+docker-compose down
+
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ docker ps
+
+
+docker-compose -f docker-compose-dev.yml up -d
+
+docker-compose -f docker-compose-dev.yml down
+
+
+
+# Testing using pytest
+
+https://docs.pytest.org/en/8.2.x/
+
+pip install pytest
+
+pytest
+
+pytest --help
+
+pytest -v
+
+pytest -v -s
+
+pytest --disable-warnings
+
+pytest --disable-warnings -v  #remove warning
+
+pytest --disable-warnings -v -x #stop after failed 
+
+
+(.venv) zec@zec-HP-EliteBook-840-G3:~/Documents/Ajay/FastAPI-1$ pytest --disable-warnings -v
+
+
+# Testing using TestClient
+
+https://fastapi.tiangolo.com/reference/testclient/?h=testcli
+from fastapi.testclient import TestClient
+
+
+# CI/CD Pipeline using git
+
+https://docs.github.com/en/actions
+https://docs.github.com/en/actions/quickstart
+
+![alt text](image-9.png)
+
+
+/home/zec/Documents/Ajay/FastAPI-1/.github/workflows
+
