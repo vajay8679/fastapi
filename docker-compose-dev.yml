@@ -9,7 +9,7 @@ services:
     # env_file:
     #     - ./.env
     environment:
-      - DATABASE_HOSTNAME=localhost
+      - DATABASE_HOSTNAME=postgres
       - DATABASE_PORT=5432
       - DATABASE_PASSWORD=root
       - DATABASE_NAME=fastapi
