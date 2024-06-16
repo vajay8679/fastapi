@@ -1600,3 +1600,18 @@ https://docs.github.com/en/actions/quickstart
 
 /home/zec/Documents/Ajay/FastAPI-1/.github/workflows
 
+
+
+# Introduction to GitHub Actions in Docker
+
+https://docs.docker.com/build/ci/github-actions/?highlight=github&highlight=actions
+
+
+# update the changes to hetroku from ci/cd - github marketplace
+
+https://github.com/marketplace/actions/heroku-action
+
+
+# update the changes to ubuntu server from ci/cd - github marketplace
+
+https://github.com/marketplace/actions/remote-ssh-commands
